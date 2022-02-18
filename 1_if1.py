@@ -14,12 +14,21 @@
 
 """
 
-def main():
-    """
-    Эта функция вызывается автоматически при запуске скрипта в консоли
-    В ней надо заменить pass на ваш код
-    """
-    pass
+from curses import use_default_colors
 
-if __name__ == "__main__":
-    main()
+
+def what_to_do(user_age):
+  user_age = int(user_age)
+  if user_age <= 6:
+    reply = 'Идите учиться в детский сад',
+  else: 
+    if user_age <= 16:
+      reply = 'Идите учиться в школу',
+    else:
+      if user_age <= 22:
+        reply = 'Идите учиться в ВУЗ'
+      else:
+        reply = 'Идите работать'
+  print(reply)
+
+what_to_do(user_age = input('Сколько Вам полных лет? '))
