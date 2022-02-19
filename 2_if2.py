@@ -15,12 +15,18 @@
 
 """
 
-def main():
-    """
-    Эта функция вызывается автоматически при запуске скрипта в консоли
-    В ней надо заменить pass на ваш код
-    """
-    pass
-    
-if __name__ == "__main__":
-    main()
+from ast import And
+
+
+def main(var1, var2):
+  
+  if type(var1) != str or type(var2) != str:
+    return 0
+  elif var1==var2:
+    return 1
+  elif len(var1) > len(var2):
+    return 2
+  elif var1 != var2 and var2 == 'learn':
+    return 3
+
+main(var1 = input('Напишите что-нибудь '), var2 = input('Напишите что-то еще '))
