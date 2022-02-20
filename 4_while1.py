@@ -8,14 +8,9 @@
   пользователя “Как дела?”, пока он не ответит “Хорошо”
    
 """
+print('Hello User!')
 
+stuff = input('Как дела?')
 
-def hello_user():
-    """
-    Замените pass на ваш код
-    """
-    pass
-
-    
-if __name__ == "__main__":
-    hello_user()
+while stuff != 'Хорошо':
+  stuff = input('Понятно, но все же, как дела? ')

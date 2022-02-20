@@ -15,13 +15,27 @@
     
 """
 
-questions_and_answers = {}
+from pickle import FALSE
+from turtle import goto
 
-def ask_user(answers_dict):
-    """
-    Замените pass на ваш код
-    """
-    pass
-    
-if __name__ == "__main__":
-    ask_user(questions_and_answers)
+
+questions_and_answers = {
+  "Как дела?": "Хорошо", 
+  "Что делаешь?": "Программирую", 
+  "Что программируешь?": "Эту программу", 
+  "Когда закончишь?": "Еще чуть-чуть"
+  }
+
+def ask_user(answer):
+  while questions_and_answers.get(answer) == None:
+    answer = input('Не понял тебя, что ты хотел спросить? ')
+  print(questions_and_answers[answer])
+
+print('Привет!')
+answer = input('Ты что-то хотел спросить? ')
+
+while answer != 'Нет':
+  ask_user(answer)
+  answer = input('Что-то еще хотел спросить? ')
+
+print('Хорошо, тогда пока!')

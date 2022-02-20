@@ -16,17 +16,19 @@
 """
 
 from ast import And
+from cgi import test
 
+str1 = input('First string: ')
+str2 = input('Second string: ')
 
-def main(var1, var2):
-  
-  if type(var1) != str or type(var2) != str:
+def check_strings(str1, str2):
+  if type(str1) != str or type(str2) != str: 
     return 0
-  elif var1==var2:
+  elif str1 == str2:
     return 1
-  elif len(var1) > len(var2):
+  elif str1 != str2 and len(str1) > len(str2):
     return 2
-  elif var1 != var2 and var2 == 'learn':
+  elif str1 != str2 and str2 == 'learn':
     return 3
-
-main(var1 = input('Напишите что-нибудь '), var2 = input('Напишите что-то еще '))
+  
+print(check_strings(str1, str2))

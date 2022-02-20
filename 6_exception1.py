@@ -10,11 +10,17 @@
     
 """
 
-def hello_user():
-    """
-    Замените pass на ваш код
-    """
-    pass
-    
-if __name__ == "__main__":
-    hello_user()
+from pickle import TRUE
+
+print('Hello User!')
+
+stuff = input('Как дела? ')
+
+while TRUE:
+  try:
+    stuff = input('Понятно, но все же, как дела? ')
+    if stuff == 'Хорошо':
+      break
+  except KeyboardInterrupt:
+    print(' Уже уходишь? Ну тогда пока!')
+    break
