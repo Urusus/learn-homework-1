@@ -15,7 +15,6 @@
 * Посчитать и вывести суммарное количество продаж всех товаров
 * Посчитать и вывести среднее количество продаж всех товаров
 """
-from audioop import avg
 
 
 phones = [
@@ -27,14 +26,18 @@ phones = [
 total_sales = 0
 total_sales_avg = 0
 
-for total_sales_per_model in phones:
-  model_sales = sum(total_sales_per_model["items_sold"])
-  print(f'Общее количество продаж {total_sales_per_model["product"]}: {model_sales}')
+for sales_per_model in phones:
+
+  model_sales = sum(sales_per_model["items_sold"])
+  print(f'Общее количество продаж {sales_per_model["product"]}: {model_sales}')
+
+  avg_model_sales = sum(sales_per_model['items_sold']) / len(sales_per_model['items_sold'])
+  print(f'Среднее количестыо продаж {sales_per_model["product"]}: {avg_model_sales}')
+  
   total_sales += model_sales
+  total_sales_avg += avg_model_sales / len(phones)
+
+print()
 print(f'Общее количество продаж: {total_sales}')
 
-for avg_sales_per_model in phones:
-  avg_model_sales = sum(avg_sales_per_model['items_sold']) / len(avg_sales_per_model['items_sold'])
-  print(f'Среднее количестыо продаж {avg_sales_per_model["product"]}: {avg_model_sales}')
-  total_sales_avg += avg_model_sales
-print(f'Среднее количество продаж: {total_sales_avg}')
+print(f'Общее среднее количество продаж: {total_sales_avg}')

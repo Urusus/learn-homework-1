@@ -18,9 +18,6 @@
 from ast import And
 from cgi import test
 
-str1 = input('First string: ')
-str2 = input('Second string: ')
-
 def check_strings(str1, str2):
   if type(str1) != str or type(str2) != str: 
     return 0
@@ -28,7 +25,13 @@ def check_strings(str1, str2):
     return 1
   elif str1 != str2 and len(str1) > len(str2):
     return 2
-  elif str1 != str2 and str2 == 'learn':
+  elif str2 == 'learn':
     return 3
   
-print(check_strings(str1, str2))
+print(check_strings('test', 1))
+
+print(check_strings('test', 'test'))
+
+print(check_strings('test1', 'test'))
+
+print(check_strings('test1', 'learn'))

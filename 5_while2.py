@@ -19,14 +19,17 @@ from pickle import FALSE
 from turtle import goto
 
 
-questions_and_answers = {
-  "Как дела?": "Хорошо", 
-  "Что делаешь?": "Программирую", 
-  "Что программируешь?": "Эту программу", 
-  "Когда закончишь?": "Еще чуть-чуть"
-  }
+
 
 def ask_user(answer):
+
+  questions_and_answers = {
+    "Как дела?": "Хорошо", 
+    "Что делаешь?": "Программирую", 
+    "Что программируешь?": "Эту программу", 
+    "Когда закончишь?": "Еще чуть-чуть"
+    }
+
   while questions_and_answers.get(answer) == None:
     answer = input('Не понял тебя, что ты хотел спросить? ')
   print(questions_and_answers[answer])
@@ -36,6 +39,7 @@ answer = input('Ты что-то хотел спросить? ')
 
 while answer != 'Нет':
   ask_user(answer)
+  print()
   answer = input('Что-то еще хотел спросить? ')
 
 print('Хорошо, тогда пока!')

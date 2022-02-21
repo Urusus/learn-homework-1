@@ -21,13 +21,17 @@ from curses import use_default_colors
 def what_to_do(user_age):
   user_age = int(user_age)
   if user_age <= 6:
-    reply = 'Идите учиться в детский сад'
+    return 'Идите учиться в детский сад'
   elif user_age <= 16:
-    reply = 'Идите учиться в школу'
+    return 'Идите учиться в школу'
   elif user_age <= 22:
-    reply = 'Идите учиться в ВУЗ'
+    return 'Идите учиться в ВУЗ'
   else:
-    reply = 'Идите работать'
-  print(reply)
+    return 'Идите работать'
+  return(reply)
+  
+user_age = input('Сколько Вам полных лет? ')
 
-what_to_do(user_age = input('Сколько Вам полных лет? '))
+reply = what_to_do(user_age)
+
+print(reply)

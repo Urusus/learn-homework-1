@@ -8,9 +8,12 @@
   пользователя “Как дела?”, пока он не ответит “Хорошо”
    
 """
-print('Hello User!')
+def while_fnct(stuff):
+  print('Hello User!')
 
-stuff = input('Как дела?')
+  stuff = input('Как дела?')
 
-while stuff != 'Хорошо':
-  stuff = input('Понятно, но все же, как дела? ')
+  while stuff != 'Хорошо':
+    stuff = input('Понятно, но все же, как дела? ')
+
+while_fnct('Я же могу сюда лююой аргумент положить, чтобы запустить функцию, правда?')
