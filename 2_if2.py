@@ -15,15 +15,12 @@
 
 """
 
-from ast import And
-from cgi import test
-
 def check_strings(str1, str2):
   if type(str1) != str or type(str2) != str: 
     return 0
   elif str1 == str2:
     return 1
-  elif str1 != str2 and len(str1) > len(str2):
+  elif len(str1) > len(str2):
     return 2
   elif str2 == 'learn':
     return 3
