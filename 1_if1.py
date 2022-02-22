@@ -14,10 +14,6 @@
 
 """
 
-from ast import Return
-from curses import use_default_colors
-
-
 def what_to_do(user_age):
   user_age = int(user_age)
   if user_age <= 6:
