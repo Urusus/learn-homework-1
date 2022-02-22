@@ -28,7 +28,7 @@ def what_to_do(user_age):
     return 'Идите учиться в ВУЗ'
   else:
     return 'Идите работать'
-  return(reply)
+  return reply
   
 user_age = input('Сколько Вам полных лет? ')
 
