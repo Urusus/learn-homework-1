@@ -15,13 +15,7 @@
     
 """
 
-from pickle import FALSE
-from turtle import goto
-
-
-
-
-def ask_user(answer):
+def ask_user():
 
   questions_and_answers = {
     "Как дела?": "Хорошо", 
@@ -30,16 +24,12 @@ def ask_user(answer):
     "Когда закончишь?": "Еще чуть-чуть"
     }
 
+  answer = input('Ты что-то хотел спросить? ')
+
   while questions_and_answers.get(answer) == None:
     answer = input('Не понял тебя, что ты хотел спросить? ')
+
   print(questions_and_answers[answer])
 
 print('Привет!')
-answer = input('Ты что-то хотел спросить? ')
-
-while answer != 'Нет':
-  ask_user(answer)
-  print()
-  answer = input('Что-то еще хотел спросить? ')
-
-print('Хорошо, тогда пока!')
+ask_user()
