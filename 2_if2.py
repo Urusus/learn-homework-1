@@ -24,6 +24,8 @@ def check_strings(str1, str2):
     return 2
   elif str2 == 'learn':
     return 3
+  else:
+    return 'Другое'
   
 print(check_strings('test', 1))
 
@@ -32,3 +34,5 @@ print(check_strings('test', 'test'))
 print(check_strings('test1', 'test'))
 
 print(check_strings('test1', 'learn'))
+
+print(check_strings('two', 'three'))
