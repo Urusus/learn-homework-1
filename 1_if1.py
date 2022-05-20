@@ -15,9 +15,6 @@
 """
 
 def what_to_do(user_age):
-  if type(user_age) != int:
-    raise ValueError('Принимается только ввод цифр')
-  user_age = int(user_age)
   if user_age <= 6:
     return 'Идите учиться в детский сад'
   elif user_age <= 16:
@@ -29,7 +26,6 @@ def what_to_do(user_age):
   else:
     return 'Пора на пенсию'
   
-user_age = input('Сколько Вам полных лет? ')
-
+user_age = int(input('Сколько Вам полных лет? '))
 reply = what_to_do(user_age)
 print(reply)
