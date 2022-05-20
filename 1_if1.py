@@ -15,7 +15,7 @@
 """
 
 def what_to_do(user_age):
-  if user_age != int:
+  if type(user_age) != int:
     raise ValueError('Принимается только ввод цифр')
   user_age = int(user_age)
   if user_age <= 6:
