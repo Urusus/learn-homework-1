@@ -32,5 +32,4 @@ def what_to_do(user_age):
 user_age = input('Сколько Вам полных лет? ')
 
 reply = what_to_do(user_age)
-
 print(reply)
