@@ -42,3 +42,21 @@ print("Среднее количество продаж", phones[2]["product"], 
 print()
 print("Cуммарное количество продаж всех товаров", "-", sum(all_model_sales))
 print("Среднее количество продаж всех товаров", "-", sum(all_model_sales) / len(all_model_sales))
+print()
+print("А теперь через цикл:")
+
+total_sales = 0
+sales_len = 0
+
+for phone_sales in phones:
+  total_sales_per_model = sum(phone_sales["items_sold"])
+  avegage_sales_per_model = sum(phone_sales["items_sold"]) / len(phone_sales["items_sold"])
+
+  print("Общее количество продаж", phone_sales["product"], total_sales_per_model)
+  print("Среднее количество продаж", phone_sales["product"], avegage_sales_per_model)
+
+  total_sales += total_sales_per_model
+  sales_len += len(phone_sales["items_sold"])
+
+print("Cуммарное количество продаж всех товаров",total_sales)
+print("Среднее количество продаж всех товаров", total_sales / sales_len)
