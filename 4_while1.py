@@ -9,9 +9,9 @@
    
 """
 def hello_user():
-  print('Hello User!')
+  print('Hello, User!')
 
-  stuff = input('Как дела?')
+  stuff = input('Как дела? ')
 
   while stuff != 'Хорошо':
     stuff = input('Понятно, но все же, как дела? ')
