@@ -3,7 +3,6 @@
 Домашнее задание №1
 
 Исключения: приведение типов
-
 * Перепишите функцию discounted(price, discount, max_discount=20)
   из урока про функции так, чтобы она перехватывала исключения,
   когда переданы некорректные аргументы.
@@ -13,26 +12,17 @@
     
 """
 
-def discounted(price, discount, max_discount=20):
-  try:
-    price = abs(price)
-    discount = abs(discount)
-    max_discount = abs(max_discount)
+def discounted(price, discount, max_discount):
+  try:   
+    price_with_discount = float(price) - float(price) * float(discount) / int(max_discount)
+    return price_with_discount
 
+  except ValueError:
+    print('Value Error found - stop program')
   except TypeError:
-    try:
-      price = float(price)
-      discount = float(discount)
-      max_discount = int(max_discount)
-    except ValueError:
-      print('Value error: stop')
-
-  price_with_discount = price - (price * discount / 100)
-  return price_with_discount
+    print('Type Error found - stop program')
     
-print(discounted(100, 2))
-print(discounted(100, "3"))
-print(discounted("100", "4.5"))
-print(discounted("five", 5))
-print(discounted("сто", "десять"))
-print(discounted(100.0, 5, "10"))
+print(discounted(100, 2, 20))
+print(discounted(100, "Five", 20))
+print(discounted("100", "4.5", "20"))
+print(discounted(100, 10, "twenty"))
