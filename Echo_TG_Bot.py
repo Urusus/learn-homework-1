@@ -1,18 +1,32 @@
+import logging
+# импортирование модуля логирования для отслеживания ошибок. Принято располагать импортирование модулей вверху кода
+
+logging.basicConfig(filename="bot.log", level=logging.INFO)
+# Объясняется как и куда будем логировать
+# filename="bot.log" - указываем название файла лога
+# level= - уровень важности сообщений, которые меня интересуют. 
+#   Debug - lowest level (every action/ step described)
+#   INFO - important event
+#   Warning - something to inform a user of (i.e. new patch, software version, etc)
+#   Error - errors
+
 from telegram.ext import Updater, CommandHandler
 # Импортируем нужные компоненты + CommandHandler - обработчик запросов
 
-# Настройки прокси
-PROXY = {'proxy_url': 'socks5://t2.learn.python.ru:1080',
-    'urllib3_proxy_kwargs': {'username': 'learn', 'password': 'python'}}
 
 def greet_user(update, context):
     # Update - Это то, что пришло к нам из телеграмма
     # Context - это специальная штука, с помощбю которой мы передаем команды боту, что нужно сделать
     print("Вызван /start")
+    # просто пишет в консоли текст. Но не отвечает пользователю в телеграме!
+    print(update)
+    # пишет в консоль информацию о пользователе, которую пересылает нам бот из телеграма
+
+    update.message.reply_text("Здравствуй, пользователь")
 
 
 def main():
-    mybot = Updater("5324680041:AAEivf8O2K2-cKNccpUaOOaSCF_PZcc5cIc", use_context=True, request_kwargs=PROXY)
+    mybot = Updater("__name__", use_context=True)
     # Это ключ нашего бота. контекст нужна для того, чтобы не было проблем с проходящей сейчас отладкой на стороне телеграма. Request нужен для того, чтобы запустить прокси
 
     dp = mybot.dispatcher
@@ -22,8 +36,8 @@ def main():
     # Когда с телеграма приходит обновление, код проверяет его по этой(этим) строкам и ищет, задан ли обработчик для введенной команды
     # Добавляю к диспетчеру обработчик (handler) и говорю ему, какую команду нужно обработать (commandhandler). Далее даю имя функции, которую задам отдельно
 
-
-
+    logging.info("Бот стартовал")
+    # Message for bot.log on the initiation of the bot
 
     mybot.start_polling()
     # здесь бот идет в телеграм
