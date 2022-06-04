@@ -14,7 +14,5 @@
 """
 import ephem
 
-mars = ephem.Mars('200/01/01')
-const = ephem.constellation(mars)
-print(mars)
-print(const)
+planet = input()
+
