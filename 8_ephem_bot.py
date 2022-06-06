@@ -30,8 +30,8 @@ def planet_info(update, context):
     planet = update.message.text.split()[1]
     print(planet)
     
-    if planet == "Mars":
-      Constellation = ephem.constellation(ephem.Mars('2022/06/06'))
+    if planet == "Earth":
+      Constellation = ephem.constellation(ephem.Earth('2022/06/06'))
       print(Constellation)
       update.message.reply_text('Today Mars is this constellation:')
       update.message.reply_text(str(Constellation))
