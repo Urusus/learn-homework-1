@@ -122,4 +122,8 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
+# File with confidential information
 settings.py
+
+# Training with TG bot
+Echo_TG_Bot.py
